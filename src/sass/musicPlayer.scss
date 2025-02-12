@@ -1,0 +1,849 @@
+@mixin modalBox1 {
+    position: absolute;
+    text-align: center;
+    display: none;
+    justify-content: center;
+    top: 50%;
+    opacity: 0;
+    left: 50%;
+    margin-top: -6rem;
+    margin-left: -20rem;
+    line-height: 7rem;
+    z-index: 1000;
+    border-radius: 1rem;
+    font-size: 3rem;
+    width: 40rem;
+    height: 12rem;
+    background-color: lightslategrey;
+}
+
+@mixin modalBox2 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: 0.8rem;
+    margin-left: -16.5rem;
+    display: flex;
+    width: 33rem;
+    justify-content: space-around;
+    height: 5rem;
+
+    div {
+        width: 11rem;
+        font-size: 2rem;
+        height: 4rem;
+        line-height: 4rem;
+        border-radius: 1rem;
+        background-color: lightcoral;
+    }
+
+    div:hover {
+        cursor: pointer;
+    }
+
+    div:active {
+        opacity: 0.8;
+    }
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    font-size: 10px;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+
+}
+
+body {
+    background-color: #52658F;
+}
+
+.storageAddBox {
+    @include modalBox1();
+    font-family: 'Nanum Gothic Coding', monospace;
+
+    .storageAddBoxY {
+        @include modalBox2();
+    }
+}
+
+.confirmBox {
+    font-family: 'Nanum Gothic Coding', monospace;
+    @include modalBox1();
+
+    .confirmBoxYN {
+        @include modalBox2()
+    }
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+#audioPlayer {
+    display: none;
+}
+
+.musicAllBox {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 120rem;
+    height: 70rem;
+    margin-top: -35rem;
+    margin-left: -60rem;
+    background-color: RGB(167, 137, 167);
+
+    .note {
+        font-size: 1.5rem;
+        opacity: 0.8;
+        text-align: right;
+        margin-right: 1rem;
+    }
+
+    audio {
+        display: none;
+    }
+
+    .mainMenu {
+        display: flex;
+        justify-content: center;
+        align-content: stretch;
+        flex-wrap: wrap;
+        flex-direction: column-reverse;
+        background-color: #404040;
+        height: 4rem;
+
+        ol>li {
+            display: inline-block;
+            margin: 0 1rem;
+            font-size: 2rem;
+            margin: 0 4rem;
+            cursor: pointer;
+        }
+
+        ol>li:hover {
+            opacity: 0.8;
+        }
+
+        ol>li:active {
+            opacity: 1;
+        }
+
+        ol>li:first-child {
+            color: orange;
+            font-family: 'Lobster', cursive;
+            font-size: 3rem;
+        }
+
+        .login {
+            position: absolute;
+            right: -3rem;
+        }
+    }
+
+    .albumBox {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 100rem;
+        height: 30rem;
+
+        .albumFrame {
+            display: inline;
+            float: left;
+            padding: 3rem;
+            width: 44rem;
+            height: 24rem;
+
+            .LPImage {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                margin-top: -10rem;
+                width: 20rem;
+                height: 20rem;
+                cursor: pointer;
+                transition: transform 0.3s ease;
+            }
+
+            .LPImage:hover {
+                transform: translateX(-2rem);
+            }
+
+            .LPImageL {
+                margin-left: -44rem;
+            }
+
+            .LPImageR {
+                margin-left: 6rem;
+            }
+
+            .mainAlbum {
+                position: absolute;
+                width: 21rem;
+                height: 21rem;
+                top: 50%;
+                left: 50%;
+                margin-top: -10.5rem;
+                margin-left: -10.5rem;
+                background-color: red;
+
+                .LPIPicture {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+
+            .mainAlbumL {
+                margin-left: -34rem;
+            }
+
+            .mainAlbumR {
+                margin-left: 16rem;
+            }
+
+            .albumText {
+                position: absolute;
+                transform: translate(13rem, -1rem);
+                font-size: 1.5rem;
+                font-family: 'Roboto Condensed', sans-serif
+            }
+        }
+    }
+
+    .albumBox1 {
+        margin-top: -30rem;
+        margin-left: -59rem;
+    }
+
+    .albumBox2 {
+        margin-top: -2rem;
+        margin-left: -36rem;
+    }
+
+    .mainMenual600px {
+        display: none;
+    }
+
+    @media(max-width: 600px) {
+        .mainMenual {
+            display: none;
+        }
+
+        .mainMenual600px {
+            display: block;
+        }
+    }
+
+    .mainMenual {
+        #mainHomeBtn {
+            transform: translate(0px, -0.4rem);
+            font-family: 'Nanum Gothic Coding', monospace;
+        }
+
+        #storageBtn {
+            transform: translate(0px, -0.4rem);
+            font-family: 'Nanum Gothic Coding', monospace;
+        }
+    }
+
+    .login {
+        transform: translate(0, 0.8rem);
+    }
+
+    @mixin bottomValue {
+        position: absolute;
+        top: 50%;
+        margin-top: -2rem;
+        height: 4rem;
+    }
+
+    .bottomBar {
+        display: none;
+        z-index: 10;
+        position: absolute;
+        bottom: 0;
+        height: 7rem;
+        width: 100%;
+        background-color: #404040;
+
+        .bottomBtn {
+            @include bottomValue;
+            width: 4rem;
+            font-size: 4rem;
+            text-align: center;
+            line-height: 4rem;
+            cursor: pointer;
+        }
+
+        .bottomBtn:active {
+            opacity: 0.8;
+        }
+
+        .previousBtn {
+            left: 4rem;
+        }
+
+        .startStopBtn {
+            left: 8.5rem;
+        }
+
+        .nextBtn {
+            left: 13rem;
+        }
+
+        .timeView {
+            @include bottomValue;
+            width: 14rem;
+            left: 17.5rem;
+            font-size: 1.5rem;
+            text-align: center;
+            line-height: 4rem;
+        }
+
+        .titleView {
+            @include bottomValue;
+            display: flex;
+            left: 50%;
+            height: 6rem;
+            margin-top: -3rem;
+            margin-left: -22rem;
+            right: 74rem;
+            width: 44rem;
+
+            .nowAlbumBox {
+                display: inline-block;
+                width: 6rem;
+                height: 6rem;
+
+                .nowAlbum {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+
+            .nowAlbumText {
+                display: inline-block;
+                margin-left: 2rem;
+                line-height: 3rem;
+                width: 36rem;
+                height: 6rem;
+
+                .nowAlbumText1,
+                .nowAlbumText2 {
+                    width: 100%;
+                    height: 50%;
+                }
+
+                .nowAlbumText1 {
+                    font-size: 2rem;
+                }
+
+                .nowAlbumText2 {
+                    font-size: 1.2rem;
+                }
+            }
+        }
+
+        @media(max-width: 1200px) {
+            .titleView {
+                display: none;
+            }
+        }
+
+        .soundControlBtn {
+            right: 21rem;
+        }
+
+        .continuousPlaybackBtn {
+            right: 14.5rem;
+        }
+
+        .randomPlayBtn {
+            right: 10rem;
+        }
+
+        .nowMusic {
+            transform: rotate(-90deg);
+            right: 3rem;
+        }
+    }
+
+    .volumeBox {
+        position: absolute;
+        background-color: #404040;
+        display: none;
+        justify-content: center;
+        width: 4rem;
+        height: 15rem;
+        right: 21.5rem;
+        bottom: 7rem;
+        z-index: 10;
+
+        .musicVolume {
+            transform: rotate(-90deg);
+        }
+    }
+
+    .listBox {
+        z-index: 5;
+        position: absolute;
+        bottom: 0rem;
+        background-color: #5B9C7B;
+        height: 0rem;
+        width: 100%;
+        overflow: hidden;
+
+        .nowLPBox {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-left: -15.6rem;
+            margin-top: -19rem;
+            width: 23rem;
+            animation: 6s linear;
+            animation-iteration-count: infinite;
+            animation-direction: normal;
+            animation-name: nowLPRotate;
+
+            .nowLP {
+                width: 100%;
+                height: 100%;
+            }
+
+            .nowLPText {
+                font-family: 'Lobster', cursive;
+                color: orange;
+                position: absolute;
+                font-size: 1.25rem;
+                transform: rotate(-97deg);
+                top: 18rem;
+                left: 9.5rem;
+            }
+        }
+
+        @keyframes nowLPRotate {
+            from {
+                transform: rotater(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .nowMusicAlbumBox {
+            position: absolute;
+            width: 24rem;
+            height: 30rem;
+            top: 50%;
+            left: 50%;
+            margin-top: -19rem;
+            margin-left: -4rem;
+
+            .playAlbum {
+                width: 24rem;
+
+                .nowAlbum {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+
+            .playAlbumTitle {
+                width: 30rem;
+                height: 7rem;
+
+                .playAlbumTitle1 {
+                    font-size: 3.5rem;
+                    margin-left: 0.2rem;
+                }
+
+                .playAlbumTitle2 {
+                    font-size: 1.3rem;
+                    margin-left: 0.2rem;
+                }
+            }
+        }
+    }
+
+    .albumListBox {
+        background-color: #12758F;
+        height: 0rem;
+
+
+        .backAlbumListBox {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            width: 5rem;
+            height: 5rem;
+            font-size: 5rem;
+            opacity: 0.8;
+            cursor: pointer;
+        }
+
+        .backAlbumListBox:active {
+            opacity: 1;
+        }
+
+        .albumListBoxList {
+            position: absolute;
+            width: 45rem;
+            height: 56.5rem;
+            top: 1rem;
+            left: 68rem;
+            background-color: black;
+            overflow: scroll;
+
+            .musicListBox {
+                display: flex;
+                justify-content: center;
+                width: 43rem;
+                padding: 1rem 1rem;
+                background-color: black;
+                height: 7rem;
+
+                @mixin musicListValue {
+                    width: 6rem;
+                    height: 7rem;
+                }
+
+                .musicListAlbum {
+                    @include musicListValue;
+                    width: 7rem;
+
+                    .nowAlbum {
+                        width: 100%;
+                        height: 100%;
+                        cursor: pointer;
+                    }
+                }
+
+                .musicListTitle {
+                    display: inline-block;
+                    width: 23rem;
+                    height: 5rem;
+                    padding: 1rem;
+
+                    .musicListTitleA {
+                        font-size: 2rem;
+                        cursor: pointer;
+                    }
+                }
+
+                .musicListPlayBtn {
+                    @include musicListValue;
+                    width: 5rem;
+                    font-size: 4rem;
+                    text-align: center;
+                    line-height: 7rem;
+                    cursor: pointer;
+                    opacity: 0.8;
+                }
+
+                .musicListAddBtn {
+                    @include musicListValue;
+                    width: 5rem;
+                    font-size: 3rem;
+                    text-align: center;
+                    line-height: 7rem;
+                    cursor: pointer;
+                    opacity: 0.8;
+                }
+
+                .musicListPlayBtn:active {
+                    opacity: 1;
+                }
+
+                .musicListAddBtn:active {
+                    opacity: 1;
+                }
+            }
+
+            .musicListBox:hover {
+                background-color: lightcoral;
+                cursor: pointer;
+            }
+
+            .musicListBox2 {
+                width: 100%;
+                background-color: red;
+                height: 7rem;
+            }
+        }
+
+        .musicListAddBox>p {
+            font-size: 4rem;
+            width: 100%;
+            height: 5.5rem;
+        }
+
+        .musicListAddBoxSpan>span {
+            font-size: 2rem;
+            cursor: pointer;
+        }
+
+        .musicListAddBoxSpan>span:hover {
+            color: yellow;
+        }
+
+        .musicListAddBoxSpan>span:active {
+            opacity: 0.8;
+        }
+
+        .musicListAddBox {
+            position: absolute;
+            bottom: 0rem;
+            width: 100%;
+            height: 0rem;
+            background-color: black;
+            z-index: 1;
+            text-align: center;
+
+            .backMusicListAddBoxBtn {
+                position: absolute;
+                font-size: 3rem;
+                transform: rotate(90deg);
+                margin-top: 0.5rem;
+                margin-right: 0.5rem;
+                right: 0rem;
+                cursor: pointer;
+            }
+        }
+
+        .albumListBoxAlbum {
+            position: absolute;
+            width: 20%;
+            top: 1rem;
+            left: 40rem;
+
+            .nowAlbum {
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+        .nowLP {
+            position: absolute;
+            top: 1rem;
+            left: 28rem;
+            width: 20%;
+        }
+
+        .albumListBoxMovies {
+            background-color: transparent;
+            position: absolute;
+            top: 26rem;
+            left: 8rem;
+            width: 56rem;
+            height: 31.5rem;
+            background-color: black;
+
+            p {
+                font-size: 2rem;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                width: 40rem;
+                height: 2rem;
+                margin-top: -1rem;
+                margin-left: -20rem;
+            }
+        }
+    }
+
+    .albumStorageBox {
+        z-index: 6;
+        bottom: unset;
+        top: 4rem;
+        background-color: RGB(63, 114, 175);
+
+        .deleteList {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-left: -18rem;
+            display: inline-block;
+            border: none;
+            padding: 1rem 2rem;
+            font-size: 1.6rem;
+            font-weight: bold;
+            text-align: center;
+            text-decoration: none;
+            background-color: #e0e0e0;
+            color: #333333;
+            cursor: pointer;
+            border-radius: 0.4rem;
+            transition: background-color 0.3s ease;
+        }
+
+        .deleteList:hover {
+            background-color: #cccccc;
+        }
+
+        .deleteList:active {
+            background-color: #999999;
+        }
+
+        .backStorageBox {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            width: 5rem;
+            height: 5rem;
+            font-size: 5rem;
+            opacity: 0.8;
+            cursor: pointer;
+        }
+
+        .backStorageBox:active {
+            opacity: 1;
+        }
+
+        .nowLP {
+            position: absolute;
+            top: 1rem;
+            left: 11rem;
+            width: 30rem;
+            height: 30rem;
+        }
+
+        .myStorageLP {
+            position: absolute;
+            top: 1rem;
+            left: 26rem;
+            background-color: black;
+            width: 28rem;
+            height: 28rem;
+            line-height: 55rem;
+            text-align: right;
+            padding: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .albumStorageBoxList {
+            scale: 0.8;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 55rem;
+            height: 68rem;
+            overflow: scroll;
+            background-color: #404040;
+            border: 1rem solid black;
+            margin-top: -39rem;
+            margin-left: 2rem;
+
+            .albumStorageBox {
+                display: flex;
+                justify-content: space-between;
+                width: 53rem;
+                height: 7rem;
+                background-color: black;
+                padding: 1rem 1rem;
+
+                .deleteListContent {
+                    font-size: 3rem;
+                    text-align: center;
+                    line-height: 6rem;
+                    margin-left: -1rem;
+                    cursor: pointer;
+                }
+
+                .deleteListContent:hover {
+                    color: red;
+                }
+
+                .storageAlbum {
+                    width: 7rem;
+                    height: 7rem;
+
+                    .nowAlbum {
+                        width: 100%;
+                        height: 100%;
+                    }
+
+                    .nowAlbumClick {
+                        width: 100%;
+                        height: 100%;
+                    }
+
+                    .nowAlbumClick:hover {
+                        cursor: pointer;
+                    }
+                }
+
+                .albumStorageTitle {
+                    display: inline-block;
+                    width: 18rem;
+                    height: 5rem;
+                    padding: 1rem;
+
+                    .musicListTitleA {
+                        font-size: 2.5rem;
+                    }
+
+                    .musicListTitleClick {
+                        font-size: 2.5rem;
+                    }
+
+                    .musicListTitleClick:hover {
+                        cursor: pointer;
+                        color: yellow;
+                    }
+                }
+
+                .albumStoragePlayBtn,
+                .albumStorageAddBtn {
+                    height: 7rem;
+                    width: 5rem;
+                    font-size: 4rem;
+                    text-align: center;
+                    line-height: 7rem;
+                    cursor: pointer;
+                    opacity: 0.8;
+                }
+
+                .albumStorageAddBtn {
+                    font-size: 3rem;
+                }
+
+                .albumStoragePlayBtn:active,
+                .albumStorageAddBtn:active {
+                    opacity: 1;
+                }
+            }
+
+            .albumStorageBox:hover {
+                background-color: lightcoral;
+            }
+        }
+
+        .albumStorageBoxList::before {
+            content: 'MY PLAYLIST';
+            font-size: 4rem;
+        }
+
+        .albumStorageHeart {
+            font-size: 4rem;
+            width: 4rem;
+            height: 7rem;
+            text-align: center;
+            line-height: 7rem;
+            margin-left: 4rem;
+            cursor: pointer;
+        }
+    }
+
+    .nowMusicBar {
+        display: none;
+        position: absolute;
+        bottom: 6.5rem;
+        width: 100%;
+        accent-color: red;
+        z-index: 100;
+    }
+}

@@ -1,0 +1,123 @@
+doctype html
+html(lang="ko")
+    head
+        meta(charset="utf-8")
+        title Music Ho♪
+        meta(name="viewport" content="width=device-width, initial-scale=1.0")
+        script(src="//code.jquery.com/jquery-1.11.0.min.js")
+        link(rel="preconnect" href="https://fonts.googleapis.com")
+        link(rel="preconnect" href="https://fonts.gstatic.com" crossorigin)
+        link(href="https://fonts.googleapis.com/css2?family=Wix+Madefor+Display:wght@500&display=swap" rel="stylesheet")
+        link(href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Montserrat&display=swap" rel="stylesheet")
+        link(href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Lobster&display=swap" rel="stylesheet")
+        link(href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Roboto+Condensed:ital,wght@1,700&display=swap" rel="stylesheet")
+        link(rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css")
+        link(href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Nanum+Gothic+Coding&display=swap" rel="stylesheet")
+
+        link(rel="shortcut icon" href="./img/favicon.ico")
+        link(rel="stylesheet" href="./css/musicPlayer.css")
+    body
+        audio(src="" id="audioPlayer", controls) 
+
+        .confirmBox 정말로 다 지우시겠습니까?
+            .confirmBoxYN
+                .confirmBoxYes#confirmBoxYes 예
+                .confirmBoxNo#confirmBoxNo 아니오
+        .storageAddBox 보관함에 추가되었습니다.
+            .storageAddBoxY
+                .storageAddBoxYes#storageAddBoxYes 확인
+
+        .musicAllBox#musicAllBox
+            .mainMenu#mainMenu
+                ol(class="mainMenual")
+                    li(id="mainLogoBtn") MUSIC HO♪
+                    li(id="mainHomeBtn") 홈 
+                    li(id="storageBtn") 보관함
+                ol(class="mainMenual600px")
+                    li MUSIC HO♪
+                span(class="note") 포트폴리오 연습용 사이트입니다.
+
+            .albumBox1.albumBox
+                .albumFrame.albumFrame1
+                    span(class="albumTextL albumText") NCS : Bass Arcade TOP 10
+                    img(class ="LPImageL LPImage LP1" id="LP1" src="./img/LP.png" alt="LP")
+                    .mainAlbumL.mainAlbum#mainAlbum1
+                        img(class ="LPIPicture" src="./img/Beatles.webp" alt="LP")
+                .albumFrame.albumFrame2
+                    span(class="albumTextR albumText") NCS : Gaming Music TOP 10
+                    img(class ="LPImageR LPImage LP2" id="LP2" src="./img/LP.png" alt="LP")
+                    .mainAlbumR.mainAlbum#mainAlbum2
+                        img(class ="LPIPicture" src="./img/proof.jpg" alt="LP")
+
+            .albumBox2.albumBox
+                .albumFrame.albumFrame3
+                    span(class="albumTextL albumText") NCS : Electronic TOP 10
+                    img(class ="LPImageL LPImage LP3" id="LP3" src="./img/LP.png" alt="LP")
+                    .mainAlbumL.mainAlbum#mainAlbum3
+                        img(class ="LPIPicture" src="./img/Remind Me.jpg" alt="LP")
+                .albumFrame.albumFrame4
+                    span(class="albumTextR albumText") NCS : Pop  TOP 10
+                    img(class ="LPImageR LPImage LP4" id="LP4" src="./img/LP.png" alt="LP")
+                    .mainAlbumR.mainAlbum#mainAlbum4
+                        img(class ="LPIPicture" src="./img/Arctic Monkeys.jpg" alt="LP")
+
+            .bottomBar#bottomBar
+                //- 이전
+                .previousBtn.bottomBtn.xi-step-backward#previousBtn
+                //- xi-pause 일시정지
+                div(class="startStopBtn bottomBtn xi-play" id="startStopBtn")
+                //- 다음
+                .nextBtn.bottomBtn.xi-step-forward#nextBtn
+                //- 시간
+                .timeView#timeView
+                //- 곡 이름 
+                .titleView#titleView
+                //-xi-volume-up 볼륨업, xi-volume-off 볼륨 x
+                .soundControlBtn.bottomBtn.xi-volume-up#soundControlBtn
+                //-xi-repeat-one 한 번만 전체 재생
+                .continuousPlaybackBtn.bottomBtn.xi-repeat#continuousPlaybackBtn
+                //- 랜덤재생
+                .randomPlayBtn.bottomBtn.xi-shuffle#randomPlayBtn
+                //- 현재음악화면
+                .nowMusic.bottomBtn.xi-play#nowMusic
+
+            .volumeBox#volumeBox
+                input(type="range" name ="musicVolume" min = "0" max = "10" set="1" value="10" class="musicVolume" id="musicVolume")
+
+            //- albumList
+            .albumListBox.listBox#albumListBox
+                img(class ="nowLP" src="./img/LP.png" alt="LP")
+                .backAlbumListBox.xi-backspace#backAlbumListBox
+                .albumListBoxAlbum
+                    img(class="nowAlbum" src="" id="albumListBoxNowAlbum" alt="LP")
+                .albumListBoxList#albumListBoxList
+                .musicListAddBox#musicListAddBox
+                    .backMusicListAddBoxBtn.xi-play#backMusicListAddBoxBtn
+                    p hello 
+                    .musicListAddBoxSpan
+                        span chacha
+                .albumListBoxMovies#albumListBoxMovies
+                    p 노래를 선택하시면 뮤직비디오가 나옵니다!
+
+            //- 보관함
+            .albumStorageBox.listBox#albumStorageBox
+                .span(class="deleteList" id="deletList") ALL DELETE
+                .backStorageBox.xi-backspace#backStorageBox
+                img(class ="nowLP" src="./img/LP.png" alt="LP")
+                .myStorageLP MY PLAYLIST
+                .albumStorageBoxList#albumStorageBoxList
+
+            //- nowPlaySongPage
+            .nowSongBox.listBox#nowSongBox
+                .nowLPBox
+                    span(class="nowLPText") MUSIC HO♪
+                    img(class ="nowLP" id="LP1" src="./img/LP.png" alt="LP")
+                .nowMusicAlbumBox#nowMusicAlbumBox
+                    .playAlbum#playAlbum
+                        img(class="nowAlbum" src="./img/Arctic Monkeys.jpg" alt="LP")
+                    .playAlbumTitle#playAlbumTitle 
+                        p(class="playAlbumTitle2" id="playAlbumTitle2") 음악을 추가해 주세요!
+                
+            input(type="range" name ="nowMusicBar" min = "0" max = "" set="1" value="0" class="nowMusicBar" id="nowMusicBar")
+        script(src="./js/musicPlayerInterface.js")
+        script(src="./js/musicPlayerDB.js")
